@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExamplePage snapshot should render correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h1>
+    Boiler Plate
+  </h1>
+  <h2>
+    This is an example form
+  </h2>
+  <section
+    className="alert-information-form"
+  >
+    <span
+      className="fa fa-info-circle"
+    />
+    <p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "This is a boiler plate, enjoy!",
+        }
+      }
+    />
+  </section>
+  <fieldset>
+    <legend
+      className="sr-only"
+    >
+      Go to next page?
+    </legend>
+    <div
+      className="input-radio-container"
+    >
+      <input
+        checked={true}
+        disabled={undefined}
+        id="yes"
+        name="example"
+        onChange={[Function]}
+        type="radio"
+        value="yes"
+      />
+      <label
+        htmlFor="yes"
+      >
+        Yes
+      </label>
+    </div>
+    <div
+      className="input-radio-container"
+    >
+      <input
+        checked={undefined}
+        disabled={undefined}
+        id="no"
+        name="example"
+        onChange={[Function]}
+        type="radio"
+        value="no"
+      />
+      <label
+        htmlFor="no"
+      >
+        No
+      </label>
+    </div>
+  </fieldset>
+  <button
+    className="button-primary"
+    disabled={false}
+    type="submit"
+  >
+    Next step
+  </button>
+</form>
+`;
