@@ -24,6 +24,7 @@ class Provider extends Component{
 			}})
 	}
 
+
 	onFormSubmission = () => {
 		const copyOfState = Object.assign({}, this.state)
 		copyOfState.submittedFormSuccessfully = true
