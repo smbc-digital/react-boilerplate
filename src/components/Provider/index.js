@@ -14,7 +14,6 @@ class Provider extends Component{
 			displayRecaptcha: document.getElementById('displayRecaptcha') != null ? document.getElementById('displayRecaptcha').innerHTML === 'true' ? true : false : false,
 			onChange: this.onChange,
 			onAddressChange: this.onAddressChange,
-			onChangePaymentDate: this.onChangePaymentDate,
 			onCheckBoxChange: this.onCheckBoxChange,
 			onFormSubmission: this.onFormSubmission
 		}
@@ -41,21 +40,6 @@ class Provider extends Component{
 		copyOfState[event.target.name].value = event.target.checked
 		copyOfState[event.target.name].isValid = isValid
 
-		this.setState(copyOfState)
-	}
-
-	onChangePaymentDate = (event, isValid, applicationDate) => {
-		const copyOfState = Object.assign({}, this.state)
-		copyOfState[event.target.name].value = event.target.value
-		copyOfState[event.target.name].isValid = isValid
-
-		copyOfState.applicationDate = applicationDate
-		copyOfState.firstPaymentDate = moment(copyOfState.applicationDate).date(copyOfState.paymentDate.value)
-
-		for(let i=0; copyOfState.firstPaymentDate.diff(copyOfState.applicationDate, 'days') < 14 || copyOfState.firstPaymentDate.format('DDMMMM') == '01January'; i++){
-			copyOfState.firstPaymentDate = copyOfState.firstPaymentDate.add(1, 'month')
-		}
-		
 		this.setState(copyOfState)
 	}
 
