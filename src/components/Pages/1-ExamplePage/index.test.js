@@ -1,4 +1,4 @@
-import { React, mount} from '../../../helpers/SetupTest'
+import { React, mount, useContextMock } from '../../../helpers/SetupTest'
 import { ExamplePage } from './index'
 import { getPageRoute } from '../../../helpers/pagehelper'
 import renderer from 'react-test-renderer'
@@ -12,9 +12,10 @@ describe('ExamplePage', () => {
                 isValid: true
             }
         }
+        useContextMock.mockReturnValueOnce(data)
 
         const history = { push: jest.fn() }
-		const wrapper = mount(<ExamplePage context={data} history={history} />)
+		const wrapper = mount(<ExamplePage history={history} />)
 
         //Act
         wrapper.find('form').simulate('submit')
@@ -27,16 +28,17 @@ describe('ExamplePage', () => {
     describe('snapshot', () => {
 		it('should render correctly',() => { 
 			// Arrange
-			const data = {
+            const data = {
                 example: {
                     value: 'yes',
                     isValid: true
                 }
-			}
+            }
+            useContextMock.mockReturnValueOnce(data)
 		
 			// Act
 			const tree = renderer
-			.create(<ExamplePage context={data} />)
+			.create(<ExamplePage />)
 			.toJSON()
 		
 			// Assert

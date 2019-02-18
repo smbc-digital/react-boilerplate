@@ -1,4 +1,4 @@
-import { React, mount} from '../../../helpers/SetupTest'
+import { React, mount} from '../../helpers/SetupTest'
 import { Router } from 'react-router'
 import App from './index.js'
 import createHistory from 'history/createBrowserHistory'
