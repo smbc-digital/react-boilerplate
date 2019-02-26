@@ -4,4 +4,11 @@ import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-export {React, mount, shallow}
+const useContextMock = jest.fn()
+React.useContext = useContextMock
+
+beforeEach(() => {
+    useContextMock.mockReset()
+})
+
+export {React, mount, shallow, useContextMock}

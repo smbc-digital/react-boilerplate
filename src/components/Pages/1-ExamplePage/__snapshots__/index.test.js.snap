@@ -5,7 +5,7 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
   onSubmit={[Function]}
 >
   <h1>
-    Boiler Plate
+    Boilerplate
   </h1>
   <h2>
     This is an example form
@@ -19,7 +19,7 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
     <p
       dangerouslySetInnerHTML={
         Object {
-          "__html": "This is a boiler plate, enjoy!",
+          "__html": "This is a boilerplate, enjoy!",
         }
       }
     />
