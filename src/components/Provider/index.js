@@ -21,7 +21,7 @@ const Provider = ({ children }) => {
 			value: '',
 			isValid: false
 		},
-		displayRecaptcha: document.getElementById('displayRecaptcha') != null ? document.getElementById('displayRecaptcha').innerHTML === 'true' ? true : false : false,
+		displayRecaptcha: document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false,
 		onChange: onChange
 	})
 	
