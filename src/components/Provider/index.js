@@ -3,6 +3,15 @@ import PropTypes from 'prop-types'
 import { Context } from '../../context/'
 
 const Provider = ({ children }) => {
+	const onChange = (event, isValid) => {
+		setState({
+			...state,
+			[event.target.name]: {
+				value: event.target.value, 
+				isValid
+			}})
+	}
+
 	const [ state, setState ] = useState({
 		example: {
 			value:'',
@@ -16,15 +25,6 @@ const Provider = ({ children }) => {
 		onChange: onChange
 	})
 	
-	const onChange = (event, isValid) => {
-		setState({
-			...state,
-			[event.target.name]: {
-				value: event.target.value, 
-				isValid
-			}})
-	}
-
 	return <Context.Provider value={ state }>{ children }</Context.Provider>
 }
 
