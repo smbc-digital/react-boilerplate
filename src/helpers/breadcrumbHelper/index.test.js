@@ -1,12 +1,12 @@
-import showBreadcrumb from './index.js'
+import showBreadcrumbs from './index.js'
 
-describe('showBreadcrumb', () => {
+describe('showBreadcrumbs', () => {
     it('should find div with id breadcrumb and remove hidden class when passed true', () => {
         // Arrange
         document.body.innerHTML = '<div id="breadcrumb" class="breadcrumb hidden"></div>'
 
         // Act
-        showBreadcrumb(true)
+        showBreadcrumbs(true)
         var result = document.getElementById('breadcrumb').className
         
         // Assert
@@ -17,10 +17,20 @@ describe('showBreadcrumb', () => {
         document.body.innerHTML = '<div id="breadcrumb" class="breadcrumb"></div>'
 
         // Act
-        showBreadcrumb(false)
+        showBreadcrumbs(false)
         var result = document.getElementById('breadcrumb').className
         
         // Assert
         expect(result).toEqual('breadcrumb hidden')
+    })
+    it('should do nothing when cant find breadcrumb', () => {
+        //Arrange
+        document.body.innerHTML = ''
+        // Act
+        showBreadcrumbs(false)
+        var result = document.getElementById('breadcrumb')
+        
+        // Assert
+        expect(result).toBeNull()
     })
 })

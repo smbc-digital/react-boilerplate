@@ -4,7 +4,7 @@ import { RadioInputsContainer, Button, AlertForm } from 'smbc-react-components'
 import { getPageRoute } from '../../../helpers/pagehelper'
 import { Context } from '../../../context'
 
-export const ExamplePage = ({ history }) => {
+const ExamplePage = ({ history }) => {
 	const { example, onChange } = useContext(Context)
 	
 	const options = [{
@@ -25,7 +25,7 @@ export const ExamplePage = ({ history }) => {
 		if (example.value === 'yes') {
 			history.push(getPageRoute(1))
 		} else {
-			history.push(getPageRoute(1))
+			history.push(getPageRoute(2))
 		}
 	}
 
@@ -52,7 +52,6 @@ export const ExamplePage = ({ history }) => {
 }
 
 ExamplePage.propTypes = {
-	context: PropTypes.object,
 	history: PropTypes.object
 }
 

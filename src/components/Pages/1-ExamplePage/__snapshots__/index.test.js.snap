@@ -10,20 +10,22 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
   <h2>
     This is an example form
   </h2>
-  <section
-    className="alert-information-form"
-  >
-    <span
-      className="fa fa-info-circle"
-    />
-    <p
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "This is a boilerplate, enjoy!",
+  <div>
+    <section
+      className="alert-information-form"
+    >
+      <span
+        className="fa fa-info-circle"
+      />
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "This is a boilerplate, enjoy!",
+          }
         }
-      }
-    />
-  </section>
+      />
+    </section>
+  </div>
   <fieldset>
     <legend
       className="sr-only"
@@ -32,9 +34,10 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
     </legend>
     <div
       className="input-radio-container"
+      role="radiogroup"
     >
       <input
-        checked={true}
+        defaultChecked={true}
         disabled={undefined}
         id="yes"
         name="example"
@@ -50,9 +53,10 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
     </div>
     <div
       className="input-radio-container"
+      role="radiogroup"
     >
       <input
-        checked={undefined}
+        defaultChecked={false}
         disabled={undefined}
         id="no"
         name="example"
@@ -70,6 +74,8 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
   <button
     className="button-primary"
     disabled={false}
+    id={undefined}
+    onClick={undefined}
     type="submit"
   >
     Next step

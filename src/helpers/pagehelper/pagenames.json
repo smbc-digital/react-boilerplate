@@ -2,5 +2,9 @@
 	{
 		"number": 1,
 		"route": "/example/example-page"
+	},
+	{
+		"number": 2,
+		"route": "/example/example-page-2"
 	}
 ]

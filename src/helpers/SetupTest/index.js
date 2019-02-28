@@ -6,9 +6,12 @@ Enzyme.configure({ adapter: new Adapter() })
 
 const useContextMock = jest.fn()
 React.useContext = useContextMock
+const useStateMock = jest.fn()
+React.useState = useStateMock
 
 beforeEach(() => {
     useContextMock.mockReset()
+    useStateMock.mockReset()
 })
 
-export {React, mount, shallow, useContextMock}
+export {React, mount, shallow, useContextMock, useStateMock}
