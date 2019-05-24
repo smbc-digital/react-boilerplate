@@ -1,7 +1,6 @@
-import { React, mount, useContextMock } from '../../../helpers/SetupTest'
+import { React, mount, useContextMock, renderer } from '../../../helpers/SetupTest'
 import ExamplePage from './index'
 import { getPageRoute } from '../../../helpers/pagehelper'
-import renderer from 'react-test-renderer'
 
 describe('ExamplePage', () => {
     const history = { push: jest.fn() }

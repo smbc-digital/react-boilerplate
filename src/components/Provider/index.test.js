@@ -1,12 +1,15 @@
-import { React, mount, useStateMock } from '../../helpers/SetupTest'
+import { React, mount } from '../../helpers/SetupTest'
 import Provider from '../Provider'
 import { Context } from '../../context'
 
 describe('Provider', () => {
     const setStateMock = jest.fn()
+    const useStateMock = jest.fn()
     let wrapper
     
     beforeEach(() => {
+        React.useState = useStateMock
+        
         useStateMock.mockReturnValue([{}, setStateMock])
         wrapper = mount(<Provider/>)
     })
@@ -18,7 +21,7 @@ describe('Provider', () => {
 
     describe('reCaptcha', () => {
         it('should set display reCaptcha correctly when no div exists', () => {
-            const state =  useStateMock.mock.calls[0][0]
+            const state = useStateMock.mock.calls[0][0]
 
             //Assert
             expect(state.displayRecaptcha).toBe(false)
@@ -34,7 +37,7 @@ describe('Provider', () => {
             
             //Act
             mount(<Provider/>)
-            const state =  useStateMock.mock.calls[1][0]
+            const state =  useStateMock.mock.calls[useStateMock.mock.calls.length-1][0]
 
             //Assert
             expect(state.displayRecaptcha).toBe(true)

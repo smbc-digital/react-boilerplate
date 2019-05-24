@@ -6,7 +6,13 @@ import Adapter from 'enzyme-adapter-react-16'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('ScrollToTop', () => {
+    
     describe('componentDidUpdate', () => {
+    
+        afterEach(() => {
+            global.scrollTo.mockReset()
+        })
+
         it('should scroll the window when the url changes', () => {
             // Arrange
             const props = {
@@ -22,7 +28,7 @@ describe('ScrollToTop', () => {
             )
 
             // Act
-            wrapper.instance().componentDidUpdate({location: '/test2'})
+            wrapper.setProps({location: '/test2'})
             
             // Assert
             expect(global.scrollTo).toHaveBeenCalledWith(0,0)
@@ -43,10 +49,10 @@ describe('ScrollToTop', () => {
             )
 
             // Act
-            wrapper.instance().componentDidUpdate({location: '/test'})
+            wrapper.setProps({location: '/test'})
             
             // Assert
-            expect(global.scrollTo).not.toHaveBeenCalled()
+            expect(global.scrollTo).toHaveBeenCalledTimes(1)
         })
     })
 })

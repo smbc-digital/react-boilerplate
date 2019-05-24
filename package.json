@@ -17,12 +17,12 @@
 		"await-timeout": "^0.2.0",
 		"isomorphic-fetch": "^2.2.1",
 		"moment": "^2.22.2",
-		"react": "^16.8.3",
-		"react-async-script": "^0.9.1",
-		"react-dom": "^16.8.3",
-		"react-google-recaptcha": "^0.12.0",
-		"react-router": "^4.3.1",
-		"smbc-react-components": "^4.1.70"
+		"react": "^16.8.6",
+		"react-async-script": "^1.0.1",
+		"react-dom": "^16.8.6",
+		"react-google-recaptcha": "^1.0.5",
+		"react-router": "^5.0.0",
+		"smbc-react-components": "^4.1.84"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
@@ -37,19 +37,19 @@
 		"clean-webpack-plugin": "^0.1.19",
 		"copy-webpack-plugin": "^4.6.0",
 		"enzyme": "^3.9.0",
-		"enzyme-adapter-react-16": "^1.10.0",
-		"eslint": "^5.9.0",
-		"eslint-plugin-jest": "^21.27.2",
-		"eslint-plugin-react": "^7.11.1",
+		"enzyme-adapter-react-16": "^1.13.1",
+		"eslint": "^5.16.0",
+		"eslint-plugin-jest": "^22.6.4",
+		"eslint-plugin-react": "^7.13.0",
 		"html-webpack-plugin": "^3.2.0",
 		"husky": "^0.14.3",
 		"jest": "^22.4.4",
 		"jest-fetch-mock": "^1.7.4",
 		"path": "^0.12.7",
-		"react-test-renderer": "^16.6.1",
-		"webpack": "^4.25.1",
-		"webpack-cli": "^3.1.1",
-		"webpack-dev-server": "^3.1.9"
+		"react-test-renderer": "^16.8.6",
+		"webpack": "^4.32.2",
+		"webpack-cli": "^3.3.2",
+		"webpack-dev-server": "^3.4.1"
 	},
 	"jest": {
 		"setupFiles": [

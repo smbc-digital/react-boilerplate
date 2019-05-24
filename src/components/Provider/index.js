@@ -12,6 +12,8 @@ const Provider = ({ children }) => {
 			}})
 	}
 
+	const displayRecaptcha = document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false
+
 	const [ state, setState ] = useState({
 		example: {
 			value:'',
@@ -21,7 +23,7 @@ const Provider = ({ children }) => {
 			value: '',
 			isValid: false
 		},
-		displayRecaptcha: document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false,
+		displayRecaptcha,
 		onChange: onChange
 	})
 	
