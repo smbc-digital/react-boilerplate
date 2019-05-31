@@ -14,6 +14,7 @@
 	"author": "SMBC",
 	"license": "ISC",
 	"dependencies": {
+		"aspnet-prerendering": "^3.0.1",
 		"await-timeout": "^0.2.0",
 		"isomorphic-fetch": "^2.2.1",
 		"moment": "^2.22.2",
@@ -22,6 +23,7 @@
 		"react-dom": "^16.8.6",
 		"react-google-recaptcha": "^1.0.5",
 		"react-router": "^5.0.0",
+		"regenerator-runtime": "^0.13.2",
 		"smbc-react-components": "^4.1.84"
 	},
 	"devDependencies": {
@@ -31,6 +33,7 @@
 		"babel-loader": "^7.1.5",
 		"babel-plugin-transform-class-properties": "^6.24.1",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-plugin-transform-regenerator": "^6.26.0",
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
 		"babel-preset-react": "^6.24.1",

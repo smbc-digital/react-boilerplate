@@ -1,7 +1,7 @@
 [
 	{
 		"number": 1,
-		"route": "/example/example-page"
+		"route": "/test-application/example/example-page"
 	},
 	{
 		"number": 2,

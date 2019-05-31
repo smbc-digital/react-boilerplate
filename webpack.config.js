@@ -17,6 +17,28 @@ let config = {
     }
 }
 
+let serverConfig = {
+    entry: ['babel-polyfill', './src/server.js'],
+    mode: 'development',
+    optimization: {
+        minimize: false
+    },
+    target: 'node',
+    output: {
+        libraryTarget: 'commonjs',
+        filename: 'server.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            }
+        ]
+    }
+}
+
 module.exports = (env, argv) => {
     if (argv.mode === 'development') {
         config.devtool = 'source-map'
@@ -52,5 +74,5 @@ module.exports = (env, argv) => {
         ]
     }
 
-    return config
+    return [config, serverConfig]
 }

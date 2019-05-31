@@ -8,13 +8,19 @@ import ScrollToTop from './components/ScrollToTop'
 
 let history = createHistory()
 
-ReactDOM.render(
+export const Root = () => (
 	<Provider>
-		<Router history={history}>
-			<ScrollToTop>
-				<App />
-			</ScrollToTop>
-		</Router>
-	</Provider>,
-	document.getElementById('root')
+		<ScrollToTop>
+			<App />
+		</ScrollToTop>
+	</Provider>
 )
+
+if (typeof window !== 'undefined') {
+	ReactDOM.hydrate(
+		<Router history={history}><Root/></Router>
+		,
+		document.getElementById('root')
+	)
+}
+
