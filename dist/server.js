@@ -46532,21 +46532,19 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var serverRenderer = prerendering.createServerRenderer(function (params) {
-
     var App = function App() {
         return _react2.default.createElement(
             _reactRouter.StaticRouter,
-            { location: params.location, context: {} },
+            { location: params.url },
             _react2.default.createElement(_index.Root, null)
         );
     };
-
     return new Promise(function (resolve, reject) {
-        _server2.default.renderToString(App);
+        _server2.default.renderToString(_react2.default.createElement(App, null));
 
         params.domainTasks.then(function () {
             resolve({
-                html: _server2.default.renderToString(App)
+                html: _server2.default.renderToString(_react2.default.createElement(App, null))
             });
         }, reject);
     });
@@ -47477,8 +47475,6 @@ var _ScrollToTop2 = _interopRequireDefault(_ScrollToTop);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var history = (0, _createBrowserHistory2.default)();
-
 var Root = exports.Root = function Root() {
 	return _react2.default.createElement(
 		_Provider2.default,
@@ -47491,7 +47487,9 @@ var Root = exports.Root = function Root() {
 	);
 };
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
+	var history = (0, _createBrowserHistory2.default)();
+
 	_reactDom2.default.hydrate(_react2.default.createElement(
 		_reactRouter.Router,
 		{ history: history },
@@ -55974,7 +55972,7 @@ var Provider = function Provider(_ref) {
 		})));
 	};
 
-	var displayRecaptcha = document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false;
+	var displayRecaptcha = false; //document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false
 
 	var _useState = (0, _react.useState)({
 		example: {

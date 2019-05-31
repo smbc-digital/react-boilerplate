@@ -1,5 +1,5 @@
 const showBreadcrumbs = (show) =>{
-    let breadcrumb = document.getElementById('breadcrumb')
+    let breadcrumb = null; //document.getElementById('breadcrumb')
     if(breadcrumb !== null) 
     {
         if(show){

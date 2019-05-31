@@ -12,7 +12,7 @@ const Provider = ({ children }) => {
 			}})
 	}
 
-	const displayRecaptcha = document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false
+	const displayRecaptcha = false;//document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false
 
 	const [ state, setState ] = useState({
 		example: {

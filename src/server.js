@@ -7,16 +7,17 @@ import 'regenerator-runtime/runtime'
 
 
 const serverRenderer = prerendering.createServerRenderer(params => {
-    const App = () => <StaticRouter location={params.location} context={{}}>
-        <Root/>
-    </StaticRouter>
-
+    const App = () => {
+        return(<StaticRouter location={params.url}>
+            <Root/>
+        </StaticRouter>)
+    }
     return new Promise((resolve, reject) => {
-        ReactDOMServer.renderToString(App)
+        ReactDOMServer.renderToString(<App/>)
 
         params.domainTasks.then(() => {
             resolve({
-                html: ReactDOMServer.renderToString(App),
+                html: ReactDOMServer.renderToString(<App/>),
             })
         }, reject)
     })

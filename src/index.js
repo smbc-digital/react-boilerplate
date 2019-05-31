@@ -6,8 +6,6 @@ import { Router } from 'react-router'
 import createHistory from 'history/createBrowserHistory'
 import ScrollToTop from './components/ScrollToTop'
 
-let history = createHistory()
-
 export const Root = () => (
 	<Provider>
 		<ScrollToTop>
@@ -17,8 +15,12 @@ export const Root = () => (
 )
 
 if (typeof window !== 'undefined') {
+	let history = createHistory()
+
 	ReactDOM.hydrate(
-		<Router history={history}><Root/></Router>
+		<Router history={history}>
+			<Root/>
+		</Router>
 		,
 		document.getElementById('root')
 	)
