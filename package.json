@@ -9,9 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "lint": "eslint src",
     "build": "webpack --mode production",
-    "prepush": "echo 'Starting PrePush' && npm run test:coverage && npm run lint",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepush": "echo 'Starting PrePush' && npm run test:coverage && npm run lint"
   },
   "author": "SMBC",
   "license": "ISC",
