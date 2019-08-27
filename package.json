@@ -17,7 +17,7 @@
     "await-timeout": "^0.2.0",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.22.2",
-    "react": "^16.8.3",
+    "react": "^16.9.0",
     "react-async-script": "^0.9.1",
     "react-dom": "^16.8.3",
     "react-google-recaptcha": "^0.12.0",
