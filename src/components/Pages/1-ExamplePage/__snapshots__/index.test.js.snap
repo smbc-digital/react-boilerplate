@@ -37,7 +37,7 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
       role="radiogroup"
     >
       <input
-        defaultChecked={true}
+        checked={true}
         disabled={undefined}
         id="yes"
         name="example"
@@ -56,7 +56,7 @@ exports[`ExamplePage snapshot should render correctly 1`] = `
       role="radiogroup"
     >
       <input
-        defaultChecked={false}
+        checked={false}
         disabled={undefined}
         id="no"
         name="example"
