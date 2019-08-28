@@ -22,8 +22,7 @@
     "react-dom": "^16.8.3",
     "react-google-recaptcha": "^0.12.0",
     "react-router": "^4.3.1",
-    "smbc-react-components": "^4.1.112",
-    "snyk": "^1.195.1"
+    "smbc-react-components": "^4.1.112"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
