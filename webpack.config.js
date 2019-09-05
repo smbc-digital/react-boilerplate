@@ -45,8 +45,8 @@ module.exports = (env, argv) => {
             }
         }
         config.plugins = [
-            new webpack.PrefetchPlugin('./node_modules/', 'react-google-recaptcha/lib/es/recaptcha-wrapper.js'),
-            new webpack.PrefetchPlugin('./node_modules/', 'react-google-recaptcha/lib/es/recaptcha.js'),
+            new webpack.PrefetchPlugin('./node_modules/', 'react-google-recaptcha/lib/recaptcha-wrapper.js'),
+            new webpack.PrefetchPlugin('./node_modules/', 'react-google-recaptcha/lib/recaptcha.js'),
             new webpack.PrefetchPlugin('./node_modules/', 'react-async-script/lib/async-script-loader.js'),
             new webpack.PrefetchPlugin('./node_modules/', 'babel-runtime/core-js/get-iterator.js')
         ]
