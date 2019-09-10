@@ -3,29 +3,29 @@ import PropTypes from 'prop-types'
 import { Context } from '../../context/'
 
 const Provider = ({ children }) => {
-	const onChange = (event, isValid) => {
-		setState({
-			...state,
-			[event.target.name]: {
-				value: event.target.value, 
-				isValid
-			}})
-	}
-
-	const [ state, setState ] = useState({
+	const [state, setState] = useState({
 		example: {
-			value:'',
+			value: '',
 			isValid: false
 		},
 		example2: {
 			value: '',
 			isValid: false
 		},
-		displayRecaptcha: document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false,
-		onChange: onChange
+		displayRecaptcha: document.getElementById('displayRecaptcha') ? document.getElementById('displayRecaptcha').innerHTML === 'true' : false
 	})
-	
-	return <Context.Provider value={ state }>{ children }</Context.Provider>
+
+	const onChange = (event, isValid) => {
+		setState({
+			...state,
+			[event.target.name]: {
+				value: event.target.value,
+				isValid
+			}
+		})
+	}
+
+	return <Context.Provider value={{ ...state, onChange }}>{children}</Context.Provider>
 }
 
 Provider.propTypes = {
